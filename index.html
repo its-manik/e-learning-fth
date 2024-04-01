@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Rubik and raleway font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom tailwind -->
+    <script>
+      tailwind.config = {
+        content: ["./src/**/*.{html,js}"],
+        mode: "jit",
+        theme: {
+          extend: {},
+          container: {
+            // you can configure the container to be centered
+            center: true,
+            // or have default horizontal padding
+            padding: "1rem",
+            // default breakpoints but with 40px removed
+            //
+            // notice how the color changes at 768px but
+            // the container size changes at 728px
+            screens: {
+              sm: "600px",
+              md: "728px",
+              lg: "984px",
+              xl: "1140px",
+              "2xl": "1340px",
+            },
+          },
+        },
+        plugins: [],
+      };
+    </script>
+    <!-- Custom css -->
+    <style>
+      .font-rubik {
+        font-family: "Rubik", sans-serif;
+      }
+
+      .font-raleway {
+        font-family: "Raleway", sans-serif;
+      }
+    </style>
+    <title>E Learner</title>
+  </head>
+
+  <body class="font-rubik">
+    <!-- Navbar -->
+    <nav class="w-full">
+      <div
+        class="bg-white container w-full mx-auto flex justify-between px-5 lg:px-0 lg:grid lg:grid-cols-3 py-4 lg:py-2 items-center place-content-center"
+      >
+        <div class="col-span-1"><img src="assets/Logo.png" alt="" /></div>
+        <div
+          class="col-span-2 hidden lg:flex items-center justify-between lg:ml-32"
+        >
+          <div>
+            <ul
+              class="uppercase flex items-center gap-10 py-5 px-3 text-md font-semibold"
+            >
+              <li>
+                <a href="index.html"> Home </a>
+              </li>
+              <li>
+                <a href="professors.html" class="flex items-center gap-2">
+                  <span>Professors</span>
+                  <span
+                    ><img
+                      src="./assets/arrow-d.png"
+                      class="rotate-180"
+                      alt="" /></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul class="flex gap-7 text-md font-semibold items-center">
+              <li><a href="#">Sign In</a></li>
+              <li
+                class="bg-gradient-to-r from-[#7FACD6] to-[#598496] rounded-[10px] text-white px-8 py-4"
+              >
+                <a href="#">Register</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="lg:hidden relative">
+          <img
+            src="assets/Vector.png"
+            id="menu-btn"
+            alt=""
+            class="cursor-pointer"
+          />
+          <div
+            class="absolute bg-white rounded-lg right-0 top-5 hidden"
+            id="mobileMenu"
+          >
+            <ul class="uppercase py-5 px-3 text-lg font-medium">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./professors.html">Professors</a></li>
+              <li><a href="#">Sign In</a></li>
+              <li
+                class="bg-gradient-to-r from-[#7FACD6] to-[#598496] rounded-[10px] text-white px-2 py-2"
+              >
+                Register
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- banner section -->
+    <section
+      class="bg-gradient-to-br from-[#7FACD6] to-[#99b6c3] min-h-[calc(100vh-84px)] flex items-center justify-center flex-col"
+    >
+      <h2
+        class="uppercase tracking-[.1rem] text-center md:tracking-[.17rem] text-white w-11/12 md:w-auto p-3 bg-white bg-opacity-20 text-sm rounded-lg font-medium"
+      >
+        Cutting-Edge E-Learning Platform
+      </h2>
+      <h1
+        class="font-raleway lg:text-5xl text-3xl w-11/12 leading-normal lg:leading-normal font-extrabold text-white max-w-screen-sm text-center mt-6 mx-auto"
+      >
+        Unlock Your Learning Potential
+      </h1>
+      <p
+        class="text-lg lg:text-xl lg:leading-loose mb-10 text-white md:max-w-screen-lg w-full px-2 leading-loose md:w-auto text-center mx-auto my-4"
+      >
+        Empower Yourself: Unleash Your Learning Potential with Our Cutting-Edge
+        E-Learning Platform. Discover a dynamic virtual environment designed to
+        unlock the full scope of your educational journey
+      </p>
+      <div
+        class="w-full md:w-1/2 mx-auto flex flex-col md:flex-row items-center justify-center gap-4"
+      >
+        <input
+          type="text"
+          name=""
+          id=""
+          placeholder="Search for Instructor"
+          class="p-6 rounded-[10px] focus:outline-none flex-1 w-11/12 md:w-auto"
+        />
+        <button
+          class="bg-gradient-to-r from-[#7FACD6] to-[#598496] w-11/12 md:w-auto py-6 px-9 text-base font-semibold text-white rounded-[10px]"
+        >
+          Start Learning Now
+        </button>
+      </div>
+    </section>
+
+    <!-- Instructor section -->
+    <section
+      class="relative bg-[url('./assets/learning.png')] bg-cover bg-no-repeat bg-center min-h-screen flex justify-center items-center flex-col p-5 py-10 pb-[5rem]"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-85"></div>
+      <h3 class="relative uppercase font-bold text-white">tOP Instructor</h3>
+      <hr class="relative border-2 border-[#7FACD6] w-32" />
+
+      <h1
+        class="relative font-raleway font-semibold text-2xl lg:text-4xl text-white mt-6 text-center"
+      >
+        Check out our Top Instructors
+      </h1>
+      <div
+        class="lg:grid lg:grid-cols-3 flex flex-col items-center gap-8 mt-20"
+      >
+        <div class="relative">
+          <img
+            src="assets/ins1.png"
+            alt="AirMax Pro"
+            class="z-0 h-full w-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+          ></div>
+          <div class="absolute bottom-4 left-4 text-left">
+            <h1 class="text-lg font-semibold text-white">Instructor Name</h1>
+            <p class="mt-2 text-sm text-[#7FACD6]">Biology Major</p>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src="assets/ins2.png"
+            alt="AirMax Pro"
+            class="z-0 h-full w-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+          ></div>
+          <div class="absolute bottom-4 left-4 text-left">
+            <h1 class="text-lg font-semibold text-white">Instructor Name</h1>
+            <p class="mt-2 text-sm text-[#7FACD6]">Engineering Major</p>
+          </div>
+        </div>
+        <div class="relative">
+          <img
+            src="assets/ins3.png"
+            alt="AirMax Pro"
+            class="z-0 h-full w-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+          ></div>
+          <div class="absolute bottom-4 left-4 text-left">
+            <h1 class="text-lg font-semibold text-white">Instructor Name</h1>
+            <p class="mt-2 text-sm text-[#7FACD6]">Civil Major</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section
+      class="min-h-screen flex justify-center items-center flex-col container mx-auto my-10"
+    >
+      <div class="w-full text-center">
+        <h2 class="font-raleway font-bold text-2xl">Learners Testimonials</h2>
+        <div class="border-t-[#7FACD6] w-1/5 my-5 border-t-2 mx-auto"></div>
+        <h3 class="text-base lg:text-xl font-medium">
+          Words From Our Learners
+        </h3>
+      </div>
+      <div
+        class="flex justify-center items-center gap-12 mt-12 flex-col lg:flex-row px-5"
+      >
+        <div class="p-8 shadow-lg lg:h-[450px] h-auto">
+          <img src="assets/testimonial1.png" alt="" class="mb-7" />
+          <div>
+            <div class="mb-5">
+              <h3 class="text-xl font-medium font-raleway">Raul Fernandez</h3>
+              <p class="text-[#598496]">February 2023</p>
+            </div>
+            <p class="xl:whitespace-pre-line text-sm lg:text-lg">
+              Incredible platform! User-friendly interface, diverse courses, and
+              personalized learning. Highly recommend for anyone eager to expand
+              their knowledge!
+            </p>
+          </div>
+        </div>
+        <div class="p-8 shadow-lg lg:h-[450px] h-auto">
+          <img src="assets/testimonial2.png" alt="" class="mb-7" />
+          <div>
+            <div class="mb-5">
+              <h3 class="text-xl font-medium font-raleway">Carlos Rodriguez</h3>
+              <p class="text-[#598496]">March 2023</p>
+            </div>
+            <p class="xl:whitespace-pre-line text-sm lg:text-lg">
+              Exceptional e-learning platform! Easy to navigate, diverse course
+              selection, and personalized learning options. A game-changer for
+              expanding knowledge!
+            </p>
+          </div>
+        </div>
+        <div class="p-8 shadow-lg lg:h-[450px] h-auto">
+          <img src="assets/testimonial3.png" alt="" class="mb-7" />
+          <div>
+            <div class="mb-5">
+              <h3 class="text-xl font-medium font-raleway">Martha Alonso</h3>
+              <p class="text-[#598496]">April 2023</p>
+            </div>
+            <p class="xl:whitespace-pre-line text-sm lg:text-lg">
+              Top-notch e-learning experience! Intuitive interface, vast course
+              selection, and tailored learning pathways. A must-try for anyone
+              seeking educational excellence!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- why choose section -->
+    <section class="container mx-auto py-10 lg:py-5">
+      <div class="flex justify-center items-center flex-col lg:flex-row px-5">
+        <div>
+          <h3 class="capitalize text-base lg:text-[22px] font-medium mb-2">
+            Why Choose us
+          </h3>
+          <h1
+            class="font-bold text-2xl lg:text-[44px] leading-[3rem] font-raleway lg:w-4/6"
+          >
+            Best Learning Platform with many Benefits
+          </h1>
+          <p class="my-9 w-full lg:w-2/4 text-base text-[#4A4A4A]">
+            Empower Yourself: Unleash Your Learning Potential with Our
+            Cutting-Edge E-Learning Platform. Discover a dynamic virtual
+            environment designed to unlock the full scope of your educational
+            journey.
+          </p>
+          <button
+            class="py-5 px-9 text-[#598496] border-[#598496] border rounded-[10px]"
+          >
+            Check Out Free Trial
+          </button>
+        </div>
+        <div class="flex flex-col gap-12 mt-12 lg:mt-0">
+          <div class="flex gap-6 items-start">
+            <img src="assets/freeTrial.png" alt="" class="w-16 md:w-auto" />
+            <div>
+              <h3 class="font-semibold text-xl lg:text-2xl mb-4">Free Trial</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Sed sed tortor turpis
+                elementum pulvinar tincidunt eu. Curabitur proin neque.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start">
+            <img src="assets/freeCourse.png" alt="" class="w-16 md:w-auto" />
+            <div>
+              <h3 class="font-semibold text-xl lg:text-2xl mb-4">Free Trial</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Sed sed tortor turpis
+                elementum pulvinar tincidunt eu. Curabitur proin neque.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 items-start">
+            <img src="assets/freeLessons.png" alt="" class="w-16 md:w-auto" />
+            <div>
+              <h3 class="font-semibold text-xl lg:text-2xl mb-4">Free Trial</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Sed sed tortor turpis
+                elementum pulvinar tincidunt eu. Curabitur proin neque.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price section -->
+    <section class="mt-20">
+      <div class="flex flex-col justify-center items-center space-y-12">
+        <div class="px-5">
+          <h2 class="font-raleway font-bold text-2xl uppercase text-center">
+            Price & plans
+          </h2>
+          <div
+            class="border-t-[#7FACD6] w-4/5 my-5 border-t-[1px] mx-auto"
+          ></div>
+          <h5
+            class="font-medium text-base lg:text-xl text-center text-[#7d7f81]"
+          >
+            Check Out our plans and choose whats best for you
+          </h5>
+        </div>
+        <div class="flex items-center gap-5">
+          <h4 class="text-base text-[#1E1E1E]">Bill month</h4>
+          <div
+            class="w-14 h-8 border-2 border-gray-300 rounded-[20px] flex items-center"
+          >
+            <div class="size-8 rounded-full bg-[#7FACD6]"></div>
+          </div>
+          <h4 class="text-base text-[#1E1E1E]">Bill yearly</h4>
+        </div>
+
+        <div class="flex items-center flex-col lg:flex-row gap-5 lg:gap-0 px-5">
+          <div class="w-full p-14 bg-white">
+            <div class="">
+              <span
+                class="mb-[38px] block text-[22px] font-semibold text-[#1E1E1E]"
+              >
+                Family & Personal
+              </span>
+              <div class="flex items-end text-[#1E1E1E]">
+                <span class="text-[65px] font-medium leading-none">$29</span>
+                <span class="text-base">/Month</span>
+              </div>
+              <div class="mt-7 border-t border-gray-100 pt-5">
+                <ul class="mb-10">
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900"
+                      >50+ free courses</span
+                    >
+                  </li>
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900">
+                      World class support</span
+                    >
+                  </li>
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900">
+                      Free lifetime updates</span
+                    >
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  class="rounded-md border-black bg-[#598496] text-base px-10 py-3 text-white"
+                >
+                  Purchase
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-full p-14 bg-white rounded-[15px] border-2 border-[#7FACD6] shadow-xl"
+          >
+            <div class="">
+              <span
+                class="mb-[38px] block text-[22px] font-semibold text-[#1E1E1E]"
+              >
+                Premium Plan
+              </span>
+              <div class="flex items-end text-[#1E1E1E]">
+                <span class="text-[65px] font-medium leading-none">$69</span>
+                <span class="text-base">/Month</span>
+              </div>
+              <div class="mt-7 border-t border-gray-100 pt-5">
+                <ul class="mb-10">
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900"
+                      >50+ free courses</span
+                    >
+                  </li>
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900">
+                      World class support</span
+                    >
+                  </li>
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900">
+                      Free lifetime updates</span
+                    >
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  class="rounded-md border-black bg-[#598496] text-base px-10 py-3 text-white"
+                >
+                  Purchase
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="w-full p-14 bg-white">
+            <div class="">
+              <span
+                class="mb-[38px] block text-[22px] font-semibold text-[#1E1E1E]"
+              >
+                Custom Membership/ Free Trial
+              </span>
+              <div class="flex items-end text-[#1E1E1E]">
+                <span class="text-[65px] font-medium leading-none">$99</span>
+                <span class="text-base">/Month</span>
+              </div>
+              <div class="mt-7 border-t border-gray-100 pt-5">
+                <ul class="mb-10">
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900"
+                      >50+ free courses</span
+                    >
+                  </li>
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900">
+                      World class support</span
+                    >
+                  </li>
+                  <li class="mb-6 flex items-center">
+                    <img src="assets/Symbol.png" alt="" />
+                    <span class="ml-2 text-sm text-gray-900">
+                      Free lifetime updates</span
+                    >
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  class="rounded-md border-black bg-[#598496] text-base px-10 py-3 text-white"
+                >
+                  Purchase
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="md:my-32 md:mb-48">
+      <div
+        class="w-full container mx-auto text-[#1E1E1E] grid lg:grid-cols-2 place-items-center lg:place-items-end gap-16 px-5"
+      >
+        <div class="w-full">
+          <h3 class="text-base lg:text-[22px] font-medium mb-[10px] w-full">
+            Faqs
+          </h3>
+          <h2
+            class="font-raleway font-bold text-2xl lg:text-[44px] w-4/5 leading-[3.5rem]"
+          >
+            Frequently asked questions
+          </h2>
+          <div class="mt-10 lg:w-[100%]">
+            <div class="accordion w-full mb-4">
+              <div class="accordion-item w-full">
+                <h2
+                  class="accordion-header py-3 cursor-pointer flex justify-between items-center"
+                  data-accordion-target="#accordion-content-1"
+                >
+                  <span
+                    class="text-base lg:text-[22px] font-bold font-raleway py-2"
+                    >What benefits i get from this platform</span
+                  >
+
+                  <img
+                    src="./assets/arrow-d.png"
+                    class="data-accordion-icon w-5 h-[.7rem] rotate-360 transform duration-200 ease-in-out"
+                  />
+                </h2>
+                <hr />
+                <div id="accordion-content-1" class="accordion-content py-4 hidden">
+                  <p class="text-[#4A4A4A]">
+                    One significant benefit of using this platform is its
+                    versatility. With a wide range of courses spanning various
+                    subjects and skill levels, users have the flexibility to
+                    tailor their learning experience to their specific interests
+                    and goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion mb-4">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header py-3 cursor-pointer flex justify-between items-center"
+                  data-accordion-target="#accordion-content-2"
+                >
+                  <span
+                    class="text-base lg:text-[22px] font-bold font-raleway py-2"
+                    >What benefits i get from this platform</span
+                  >
+                  <img
+                    src="./assets/arrow-d.png"
+                    class="data-accordion-icon w-5 h-[.7rem] rotate-180 transform duration-200 ease-in-out"
+                  />
+                </h2>
+                <hr />
+                <div id="accordion-content-2" class="accordion-content py-4 hidden">
+                  <p class="text-[#4A4A4A]">
+                    One significant benefit of using this platform is its
+                    versatility. With a wide range of courses spanning various
+                    subjects and skill levels, users have the flexibility to
+                    tailor their learning experience to their specific interests
+                    and goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion mb-4">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header py-3 cursor-pointer flex justify-between items-center"
+                  data-accordion-target="#accordion-content-3"
+                >
+                  <span
+                    class="text-base lg:text-[22px] font-bold font-raleway py-2"
+                    >What benefits i get from this platform</span
+                  >
+                  <img
+                    src="./assets/arrow-d.png"
+                    class="data-accordion-icon w-5 h-[.7rem] rotate-180 transform duration-200 ease-in-out"
+                  />
+                </h2>
+                <hr />
+                <div id="accordion-content-3" class="accordion-content py-4 hidden">
+                  <p class="text-[#4A4A4A]">
+                    One significant benefit of using this platform is its
+                    versatility. With a wide range of courses spanning various
+                    subjects and skill levels, users have the flexibility to
+                    tailor their learning experience to their specific interests
+                    and goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordionv mb-4">
+              <div class="accordion-item">
+                <h2
+                  class="accordion-header py-3 cursor-pointer flex justify-between items-center"
+                  data-accordion-target="#accordion-content-4"
+                >
+                  <span
+                    class="text-base lg:text-[22px] font-bold font-raleway py-2"
+                    >What benefits i get from this platform</span
+                  >
+                  <img
+                    src="./assets/arrow-d.png"
+                    class="data-accordion-icon w-5 h-[.7rem] rotate-180 transform duration-200 ease-in-out"
+                  />
+                </h2>
+                <hr />
+                <div id="accordion-content-4" class="accordion-content py-4 hidden">
+                  <p class="text-[#4A4A4A]">
+                    One significant benefit of using this platform is its
+                    versatility. With a wide range of courses spanning various
+                    subjects and skill levels, users have the flexibility to
+                    tailor their learning experience to their specific interests
+                    and goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <img src="assets/faq.png" alt="" class="w-fit" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="bg-[#7FACD6] bg-opacity-25 relative mt-10">
+      <div
+        class="bg-[#7FACD6] lg:w-4/5 mb-16 mx-auto lg:left-[50%] lg:transform lg:translate-x-[-50%] lg:absolute lg:-top-12 rounded-lg py-8 flex items-center justify-around flex-col lg:flex-row shadow-xl shadow-[#7FACD6]"
+      >
+        <div class="flex gap-2 items-center">
+          <img src="assets/mdi_call.png" alt="" />
+          <p class="uppercase text-xl font-semibold text-white">
+            Call at  84121111 842
+          </p>
+        </div>
+        <div class="flex gap-2 items-center">
+          <img src="assets/email.png" alt="" />
+          <p class="uppercase text-xl font-semibold text-white">
+            Email@elearner.com
+          </p>
+        </div>
+      </div>
+      <div class="container mx-auto lg:py-20 lg:pt-24 py-5 px-5 lg:px-0">
+        <div class="grid lg:grid-cols-3">
+          <div class="">
+            <img src="assets/Logo.png" alt="" class="mb-7" />
+            <p class="text-base text-[#1E1E1E] w-3/6 mb-10">
+              Here we will add Tagline about your company. Could be anything
+              that represents your company.
+            </p>
+          </div>
+          <div class="my-12 lg:my-0">
+            <h3 class="font-raleway text-lg font-semibold mb-[35px]">Pages</h3>
+            <ul class="space-y-[18px]">
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./professors.html">Professors</a></li>
+            </ul>
+          </div>
+          <div class="relative">
+            <h3 class="font-raleway text-lg font-semibold mb-9">Newsletter</h3>
+            <div class="relative">
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Email address..."
+                class="bg-transparent border-b-2 border-gray-600 focus:outline-none w-full py-2"
+              />
+              <img
+                src="assets/arrow.png"
+                alt="arrow"
+                class="absolute right-0 bottom-2 size-6"
+              />
+            </div>
+            <button
+              type="button"
+              class="rounded-md border-black bg-[#598496] text-base px-5 py-3 mt-[18px] absolute right-0 text-white"
+            >
+              Send
+            </button>
+          </div>
+        </div>
+        <small class="inline-block mt-20 text-center w-full lg:w-auto lg:mt-0"
+          >Elearner@ 2024 All rights reserved</small
+        >
+      </div>
+    </footer>
+    <!-- Js code -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        document.addEventListener("click", function (event) {
+          const isClickInsideMenu = mobileMenu.contains(event.target);
+          const isClickOnMenuBtn = menuBtn.contains(event.target);
+          if (!isClickInsideMenu && !isClickOnMenuBtn) {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      //accordion code
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = document.querySelector(
+            header.dataset.accordionTarget
+          );
+          content.classList.toggle("hidden");
+
+          const icon = header.querySelector(".data-accordion-icon");
+          icon.classList.toggle("rotate-180");
+          accordionHeaders.forEach((otherHeader) => {
+            if (otherHeader !== header) {
+              const otherContent = document.querySelector(
+                otherHeader.dataset.accordionTarget
+              );
+              otherContent.classList.add("hidden");
+              const otherIcon = otherHeader.querySelector(
+                "[data-accordion-icon]"
+              );
+              otherIcon.classList.remove("-rotate-180");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
